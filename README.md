@@ -57,7 +57,6 @@ Install Dependencies
 pip install -r requirements.txt
 
 
-
 URLS:
 
 &nbsp;  path('User-Register/',views.UserRegister, name='UserRegister'),    
@@ -74,10 +73,21 @@ URLS:
 
 &nbsp;   path('View-Account',views.view\_account, name='view\_account'),
 
+**UNIT TEST - Result**
 
+D:\HCL\SmartBank>python manage.py test myapp
+Found 0 test(s).
+System check identified some issues:
 
+WARNINGS:
+?: (staticfiles.W004) The directory 'D:\HCL\SmartBank\static' in the STATICFILES_DIRS setting does not exist.
 
+System check identified 1 issue (0 silenced).
 
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
 
 
 SmartBank — User Registration \& KYC (README / System Design) - Account Creation
