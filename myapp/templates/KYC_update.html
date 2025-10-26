@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .invalid-feedback{
+        display: block!important;
+    }
+</style>
+      <!-- Dashboard -->
+            <section class="user-dashboard">
+            <div class="dashboard-outer">
+
+                <div class="row">
+                <div class="col-lg-8">
+                    <div class="ls-widget">
+                    <div class="tabs-box">
+                        <div class="widget-title">
+                        <h4>Update KYC</h4>
+                        </div>
+                        <div class="widget-content">
+                        <form class="default-form" method="post"  enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">    
+
+                                <div class="form-group col-lg-6 col-md-12">
+                                    <label for="Mobile">Mobile Number</label>
+                                    <input type="text" name="Mobile" required>
+                                </div>
+
+                                <div class="form-group col-lg-6 col-md-12">
+                                    <label for="Aadhar_Number">Aadhar Number</label>
+                                    <input type="text" name="Aadhar_Number" required>
+                                </div>
+
+                                <div class="form-group col-lg-6 col-md-12">
+                                    <label for="Aadhar">Aadhar Card</label>
+                                    <input class="form-control" type="file" name="Aadhar" required>
+                                    <div class="invalid-feedback">Upload jpeg, jpg, png </div>
+                                    <!-- <alert>Upload jpeg, jpg, png </alert> -->
+                                </div>
+
+                                <div class="form-group col-lg-6 col-md-12">
+                                    <label for="Profile">Passport Size Photo</label>
+                                    <input class="form-control" type="file" name="Profile" required>
+                                    <div class="invalid-feedback">Upload jpeg, jpg, png </div>
+                                </div>
+
+                                <div class="form-group col-lg-1 col-md-2">
+                                    <button type="submit" class="theme-btn btn-style-one">Submit</button>
+                                </div>
+                            
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <br>
+                </div>
+
+            </div>
+            </section>
+        <!-- End Dashboard -->
+        </div>
+
+   
+{% endblock %}

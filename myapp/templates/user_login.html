@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+      <!-- Dashboard -->
+            <section class="user-dashboard">
+            <div class="dashboard-outer">
+
+                <div class="row">
+                <div class="col-lg-8">
+                    <div class="ls-widget">
+                    <div class="tabs-box">
+                        <div class="widget-title">
+                        <h4>User Login</h4>
+                        </div>
+                        <div class="widget-content">
+                        <form class="default-form" method="post">
+                            {% csrf_token %}
+                            <div class="row">    
+
+                                <div class="form-group col-lg-6 col-md-12">
+                                    <label for="Mobile">Mobile Number</label>
+                                    <input type="text" name="Mobile" required>
+                                </div>
+
+                                <div class="form-group col-lg-6 col-md-12">
+                                    <label for="Password">Password</label>
+                                    <input type="password" name="Password" required>
+                                </div>
+
+                                <div class="form-group col-lg-1 col-md-2">
+                                    <button type="submit" class="theme-btn btn-style-one">Submit</button>
+                                </div>
+                            
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+
+            </div>
+            </section>
+        <!-- End Dashboard -->
+        </div>
+
+  
+{% endblock %}

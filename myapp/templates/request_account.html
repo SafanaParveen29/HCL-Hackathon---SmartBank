@@ -1,0 +1,82 @@
+{% extends 'base1.html' %}
+{% block content %}
+
+<!-- Dashboard -->
+  <section class="user-dashboard">
+    <div class="dashboard-outer">
+      <div class="row">
+        <div class="col-lg-12">
+          {% for message in messages %}
+            <div class="column col-lg-12 col-md-12 col-sm-12">
+              <div class="message-box warning">
+                {{message}}
+                <button class="close-btn"><span class="close_icon"></span></button>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="col-lg-10">
+          <h3>Request New Account</h3>
+        </div>
+
+        <div class="col-lg-2 d-flex justify-content-end">
+          <a href="{%url 'user_dashboard' %}" class="theme-btn btn-style-one"><span class="btn-title">Back</span></a>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-12">
+            <br>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ls-widget">
+              <div class="tabs-box">
+                <div class="widget-title">
+                  <h4>Request Account</h4>
+                </div>
+                <div class="widget-content">
+                  <form class="default-form" method="post">
+                    {% csrf_token %}
+                    <div class="row">                  
+
+                      <div class="form-group col-lg-2 col-md-12"></div>
+                      <div class="form-group col-lg-5 col-md-12">
+                        <label>Account Type</label>
+                        <select class="form-control" name="Account_Type" id="Account_Type" required>
+                          <option value="">Select</option>
+                          <option value="Savings">Savings</option>
+                          <option value="Current">Current</option>
+                          <option value="FD">FD</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-lg-5 col-md-2"></div>
+
+                      <div class="form-group col-lg-2 col-md-12"></div>
+
+                      <div class="form-group col-lg-5 col-md-12">
+                         <label>
+                            <input type="checkbox" name="deposit_confirm" id="deposit_confirm" required>
+                            I confirm that I am making an initial deposit of ₹1000.
+                        </label>
+                      </div>
+                    
+                      <div class="form-group col-lg-1 col-md-2">
+                        <button type="submit" class="theme-btn btn-style-one">Create Account</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+    </div>
+  </section>
+  <!-- End Dashboard -->
+   
+{% endblock %}
